@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Updated Viewport for Mobile Native Feel (No Zoom, Full Coverage) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>NURU FIT - Treino Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+      
+      /* Mobile Safe Area Variables */
+      :root {
+        --sat: env(safe-area-inset-top);
+        --sab: env(safe-area-inset-bottom);
+        --sal: env(safe-area-inset-left);
+        --sar: env(safe-area-inset-right);
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #000000;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0;
+        /* Ensure the body fills the viewport including notch areas */
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        padding-top: var(--sat);
+        padding-bottom: var(--sab);
+        padding-left: var(--sal);
+        padding-right: var(--sar);
+        overflow-x: hidden;
+        
+        /* Privacy Protection: Disable text selection */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        
+        /* Hide scrollbar */
+        scrollbar-width: none; 
+        /* iOS Tap Highlight Removal */
+        -webkit-tap-highlight-color: transparent;
+      }
+      body::-webkit-scrollbar { 
+        display: none; 
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      /* Prevent image dragging */
+      img {
+        -webkit-user-drag: none;
+        user-drag: none;
+        pointer-events: none;
+      }
+      /* Utility for Safe Area Padding via Tailwind arbitrary values doesn't always work without this */
+      .pt-safe { padding-top: env(safe-area-inset-top); }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body oncontextmenu="return false;">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

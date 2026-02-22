@@ -1,0 +1,9 @@
+{
+  "name": "NURUFIT ",
+  "description": "A 30-day home/GYM workout application with AI food tracking, body-type customization, and water reminders.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
